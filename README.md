@@ -1,18 +1,7 @@
-## Getting Started
+This is my submission for OOP Assignment 3
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+To use this program, enter any number (1) followed by a space, and then type your conversion rate with an equals sign between the two metrics without spaces (km=m). 
 
-## Folder Structure
+Example: 10 oz=g
 
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+This program supports the following conversions, kilometers to meters (km=m), ounces to grams (oz=g), inches to feet (in=ft), and seconds to minutes (sec=min). You can also complete these conversions in either direction (km=m) <-> (m=km).
