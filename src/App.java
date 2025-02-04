@@ -12,8 +12,6 @@ public class App {
         while (true) {
             
             String userinput = scanner.nextLine();
-            //scanner.close();
-            //System.out.println(userinput);
 
             if (userinput.equals("exit")){
             System.out.println("Goodbye!");
@@ -22,37 +20,46 @@ public class App {
 
             String[] arr = userinput.split(" ", 2);
 
-            System.out.println(arr);
-
-            String valString = arr[0];
-            double val = Double.parseDouble(valString);
-            
             if (arr.length < 2){
                 System.err.println("Your input is not currently handled by this app, please input another query, for example, 1 km=m (with a space between the number and the metric conversion)");                //System.out.println(metric);
                 continue;
             }
 
-            String metric = arr[1];
+            String valString = arr[0];
+            double val = Double.parseDouble(valString);            
+            double originalVal = val;
+
+            String metrics = arr[1];
+
+            String[] arr2 = metrics.split("=", 2);
+
+            if (arr2.length < 2){
+                System.err.println("Your input is not currently handled by this app, please input another query, for example, 1 km=m (with a space between the number and the metric conversion)");                //System.out.println(metric);
+                continue;
+            }
+
+            String metric1 = arr2[0];
+            String metric2 = arr2[1];
 
             //kilometers and meters
-            if (metric.equals("km=m"))
+            if (metrics.equals("km=m"))
                 val = val*1000;
-            else if (metric.equals("m=km"))
+            else if (metrics.equals("m=km"))
                 val = val/1000;
             //grams and ounces
-            else if (metric.equals("g=oz"))
+            else if (metrics.equals("g=oz"))
                 val = val/28.35;
-            else if (metric.equals("oz=g"))
+            else if (metrics.equals("oz=g"))
                 val = val*28.35;
             // inches and feet
-            else if (metric.equals("in=ft"))
+            else if (metrics.equals("in=ft"))
                 val = val/12;
-            else if (metric.equals("ft=in"))
+            else if (metrics.equals("ft=in"))
                 val = val*12;
             // seconds and minutes
-            else if (metric.equals("sec=min"))
+            else if (metrics.equals("sec=min"))
                 val = val/60;
-            else if (metric.equals("min=sec"))
+            else if (metrics.equals("min=sec"))
                 val = val*60;
             // not supported
             else{
@@ -60,7 +67,7 @@ public class App {
                 continue;
             }
 
-            System.out.println(val);
+            System.out.println(originalVal+metric1+" = "+val+metric2);
 
         }
         scanner.close();
